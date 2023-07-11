@@ -1,9 +1,11 @@
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
 
 namespace BoidsLogic
 {
+    [BurstCompile]
     public struct AccelerationJob : IJobParallelFor
     {
         [ReadOnly] private NativeArray<Vector3> _positions;

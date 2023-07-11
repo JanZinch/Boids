@@ -1,4 +1,3 @@
-using System;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
@@ -32,7 +31,7 @@ namespace BoidsLogic
 
             for (int i = 0; i < entitiesTransforms.Length; i++)
             {
-                entitiesTransforms[i] = Instantiate(_entityPrefab).transform;
+                entitiesTransforms[i] = Instantiate(_entityPrefab, transform).transform;
                 _entitiesVelocities[i] = Random.insideUnitSphere;
             }
 

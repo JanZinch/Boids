@@ -1,15 +1,16 @@
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace BoidsLogic
 {
+    [BurstCompile]
     public struct BoundsJob : IJobParallelFor
     {
         [ReadOnly] private NativeArray<Vector3> _positions;
         private NativeArray<Vector3> _accelerations;
-        private Vector3 _size;
+        private readonly Vector3 _size;
 
         public BoundsJob(NativeArray<Vector3> positions, NativeArray<Vector3> accelerations, Vector3 size)
         {
@@ -31,7 +32,7 @@ namespace BoidsLogic
                                      + Compensate(size.z - position.z, Vector3.back);
         }
 
-        private Vector3 Compensate(float delta, Vector3 direction)
+        private static Vector3 Compensate(float delta, Vector3 direction)
         {
             const float threshold = 3f;
             const float multiplier = 100f;
@@ -46,8 +47,6 @@ namespace BoidsLogic
             {
                 return direction * (1 - delta / threshold) * multiplier;
             }
-
-
         }
     }
 }

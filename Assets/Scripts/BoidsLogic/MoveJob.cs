@@ -1,9 +1,11 @@
+using Unity.Burst;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Jobs;
 
 namespace BoidsLogic
 {
+    [BurstCompile]
     public struct MoveJob : IJobParallelForTransform
     {
         private NativeArray<Vector3> _positions;
