@@ -168,12 +168,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entityPrefab: {fileID: 7586047067153986733, guid: 1f433889045d4cc43822a984ee7a3ecb, type: 3}
-  _entitiesNumber: 500
+  _entitiesNumber: 700
   _entitiesDestinationThreshold: 5
   _entitiesVelocityLimit: 3
   _entitiesMovingBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 25, y: 15, z: 15}
+    m_Extent: {x: 25, y: 12, z: 9}
   _weights: {x: 5, y: 0.5, z: 0.4}
 --- !u!1 &705507993
 GameObject:
@@ -346,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalPosition: {x: 0, y: 0, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
